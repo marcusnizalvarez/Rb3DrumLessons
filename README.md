@@ -19,6 +19,8 @@ This repository contains my attempt to transcribe the entire tutorial into MIDI 
 
 ## Clone Hero Practice Features
 
+![Tutorial preview](docs/preview.gif)
+
 - I added section events to the converted MIDI files.
 - **This allows each exercise to appear as a separate section in Clone Hero’s practice mode**.
 - You can loop any exercise indefinitely, which is ideal for focused practice.
