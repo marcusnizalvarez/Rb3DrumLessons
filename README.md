@@ -10,7 +10,7 @@ This repository contains my attempt to transcribe the entire tutorial into MIDI 
 
 ## How to Use
 
-1. Download this release.
+1. Download [this](https://github.com/marcusnizalvarez/Rb3DrumLessons/releases/download/v1.0/Rb3ProDrumLessons.zip) release.
 2. Copy the **`Pro Drum Lessons`** folder into your Clone Hero songs directory.
 3. Scan songs in Clone Hero.
 4. Play.
