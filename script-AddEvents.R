@@ -3,6 +3,7 @@ rm(list=ls())
 
 Names=read_lines('names.list')
 
+#Name=Names[1]
 for(Name in Names){
   Csv=In=read.csv(str_c('EachLesson/',Name,'/4.csv'),header=F)
   OutFile=str_c('EachLesson/',Name,'/5.csv')
@@ -11,18 +12,18 @@ for(Name in Names){
     filter(V4!=' Start') %>% 
     filter(str_detect(V3,'Marker_t')) %>% 
     mutate(V1=3) %>%  # CHECK IF THIS IS THE CORRECT EVENTS TRACK! (USUALLY REPLACES METRONOME)
-    mutate(V2=V2-3000) %>% 
+    mutate(V2=V2) %>% 
     mutate(V3='Text_t') %>% 
     mutate(V4=V4 %>% str_remove_all(str_remove_all(Name,'[0-9]+?_') %>% str_replace_all('_',' ')) %>% str_trim()) %>% 
     mutate(V4=str_c('[section ',str_replace_all(tolower(V4),'\\s','_'),']'))
-  Out=Csv %>% 
-    filter(V1!=3) %>% 
-    filter(V1!=0)
   
   # Header
   write_csv(x=head(Csv,n=1),file=OutFile,quote='none',col_names=F,na='')  
 
   # Body
+  Out=Csv %>% 
+    filter(V1!=3) %>% 
+    filter(V1!=0)
   write_csv(x=Out,file=OutFile,quote='none',col_names=F,na='',append=T)
   
   # Events header
